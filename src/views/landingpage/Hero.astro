@@ -1,0 +1,55 @@
+---
+import { Image, Picture } from '@astrojs/image/components';
+import HeroImage from "../../assets/hero_image.png"
+import YTIcon from "../../assets/yt_icon.svg"
+
+---
+
+<main class="bg-hero_pattern bg-blue-300 relative min-h-screen flex items-center justify-around">
+    <section class=" h-full bg-transparent w-[40%]">
+        <div class="rounded-xl  shadow-xl flex items-center bg-blue-100 p-4 justify-around w-[477px] text-[#3734A9]">
+            <span class="bg-transparent">
+                <p class="bg-transparent">Free Registration</p>
+            </span> 
+            
+            <span class="bg-transparent">
+                <p class="bg-transparent">Great Service</p>
+            </span>
+
+            <span class="bg-transparent">
+                <p class="bg-transparent">Easy Payment</p>
+            </span> 
+        </div>
+
+        <div class="bg-transparent mt-10 mb-5">
+            <p class="bg-transparent leading-11 font-light w-[70%] text-[40px]">
+                Getting the best and latest style has never
+                <span class="bg-transparent font-extrabold text-[#3734A9]">been easier!</span>
+            </p>
+        </div>
+        <p class="bg-transparent">
+            <span class="bg-transparent font-semibold">FashionForAll</span> is a platform that helps to make fashion accessible to all. It brings fashion to your doorstep!
+        </p>
+
+        <div class="bg-transparent my-10 flex items-center">
+            <button class="bg-[#3734A9] p-4 text-sm  mr-5 text-white font-semibold rounded-md">Shop Collections</button>
+            <span class="flex items-center bg-transparent">
+                <Image class="bg-transparent mr-1" src={YTIcon} alt="icon yt" />
+                <p class="text-[#3734A9] text-sm font-semibold bg-transparent">Watch reviews
+            </span>
+        </div>
+    </section>
+
+    <section class="bg-transparent w-[40%]  mt-14">
+        <div class="bg-transparent">
+            <Image class="bg-transparent" src={HeroImage} alt="" />
+        </div>
+
+        
+    </section>
+    
+</main>
+
+<style>
+
+</style>

@@ -1,39 +1,49 @@
 ---
+import { Image } from '@astrojs/image/components';
+import { Icon } from 'astro-icon'
+import cartIcon from "../assets/cartIcon.svg"
 export interface Props {
 	title: string;
-	body: string;
+	price: number;
 	href: string;
+	imageLink: string
+	category: string
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, price, imageLink, category } = Astro.props;
 ---
 
-<li class="link-card">
+<li class="bg-gray-200 relative shadow-md list-none p-3 w-[320px] h-[500px]">
+	
 	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
+		<img class="rounded-xl bg-transparent w-full h-3/5"  src={imageLink} alt="image"/>
+		<div class="absolute bottom-2 w-full bg-transparent px-3">
+			<h2 class="bg-transparent font-semibold text-start my-4">
+				{title}
+				<!-- <span class="bg-transparent">&rarr;</span> -->
+				
+			</h2>
+			<div class="bg-transparent flex items-center w-full justify-between">
+				<div class="bg-transparent">
+					<p class="text-xs font-normal bg-transparent mb-2">{category || "clothes"}</p>
+					<p class="bg-transparent font-semibold text-sm">$ {price || 30.00}</p>
+				</div>
+
+				<div class="bg-[#3734A9] p-2 rounded-full mr-3">
+					<Image class="bg-transparent" src={cartIcon} alt="ci" />
+				</div>
+			</div>
+		
+		</div>
+		
+			<!-- <p class="text-xs">
+				{price}
+			</p> -->
 	</a>
 </li>
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 0.25rem;
-		background-color: white;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 0.6rem;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-	}
 
-	.link-card > a {
+	/* .link-card > a {
 		width: 100%;
 		text-decoration: none;
 		line-height: 1.4;
@@ -45,19 +55,18 @@ const { href, title, body } = Astro.props;
 	}
 	h2 {
 		margin: 0;
-		font-size: 1.25rem;
 		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
+	} 
 	p {
 		margin-top: 0.5rem;
 		margin-bottom: 0;
 		color: #444;
-	}
-	.link-card:is(:hover, :focus-within) {
+	} 
+ .link-card:is(:hover, :focus-within) {
 		background-position: 0;
 		background-image: var(--accent-gradient);
 	}
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent));
-	}
+	} */
 </style>

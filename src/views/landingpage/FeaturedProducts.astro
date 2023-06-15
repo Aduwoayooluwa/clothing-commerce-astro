@@ -1,0 +1,34 @@
+---
+import FilterBar from "../../layouts/FilterBar.astro";
+import Card from "../../components/Card.astro"
+
+const men_res = await fetch("https://fakestoreapi.com/products/category/men's clothing")
+const women_res = await fetch("https://fakestoreapi.com/products/category/women's clothing")
+const men = await men_res.json()
+const women = await women_res.json()
+console.log(men)
+---
+
+
+
+<main class="bg-transparent p-3 ">
+    <p class="text-center bg-transparent text-bold font-bold text-[32px]">Our Featured Products</p>
+    <FilterBar>
+        <fieldset  class="grid grid-cols-3 place-items-center gap-4">
+            {
+                men?.slice(1, 4).map((item: any, index: number) => {
+                    return (
+                    <Card category={item?.category} price={item?.price} title={item?.title} href="" imageLink={item?.image}/>
+                    )
+                })
+            }
+            {
+                women?.map((item: any, index: number) => {
+                    return (
+                        <Card category={item?.category} price={item?.price} title={item?.title} href="" imageLink={item?.image}/>
+                    )
+                })
+            }
+        </fieldset>
+    </FilterBar>
+</main>

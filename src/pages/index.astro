@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Landingpage from "../views/Landingpage.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<!-- <Layout title="Welcome to Astro.">
 	<main>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
 		<p class="instructions">
@@ -33,20 +34,23 @@ import Card from '../components/Card.astro';
 			/>
 		</ul>
 	</main>
+</Layout> -->
+<Layout title="">
+<main>
+	<Landingpage />
+</main>
 </Layout>
 
 <style>
 	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
+		max-width: 100%;
 	}
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
 		margin: 0;
 	}
-	.text-gradient {
+	/* .text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
@@ -77,5 +81,5 @@ import Card from '../components/Card.astro';
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 1rem;
 		padding: 0;
-	}
+	} */
 </style>

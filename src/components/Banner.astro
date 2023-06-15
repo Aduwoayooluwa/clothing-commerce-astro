@@ -1,0 +1,22 @@
+---
+import { Image, Picture } from '@astrojs/image/components';
+import Queen1 from "../assets/queen_1.svg"
+import Queen2 from "../assets/queen_2.svg"
+import Fashion1 from "../assets/fashion_1.svg"
+import NextImg from "../assets/next_1.svg"
+import Logo from "../assets/logo.svg"
+---
+
+
+<main class="bg-blue-100 h-[207px] w-4/5 grid place-items-center">
+    <section class="bg-transparent">
+        <p class="bg-transparent text-center text-[22px]"> Over <span class="bg-transparent text-[36px] font-bold text-[#3734A9]">32k+</span> fashion gurus are growing their brands with FashionForAll.</p>
+        <div class="bg-transparent mt-5 flex w-full items-center justify-between">
+            <Image class="bg-transparent" src={NextImg} alt="logo_1" />
+            <Image width={150} class="bg-transparent mx-14" src={Logo} alt="logo_1" />
+            <Image class="bg-transparent" src={Queen1} alt="logo_1" />
+            <Image class="bg-transparent mx-14" src={Fashion1} alt="logo_1" />
+            <Image class="bg-transparent" src={Queen2} alt="logo_1" />
+        </div>
+    </section>
+</main>

@@ -1,0 +1,29 @@
+---
+import Banner from "../components/Banner.astro";
+import Hero from "./landingpage/Hero.astro";
+import EdgeImage from "../assets/edgeImage.png"
+import { Image, Picture } from '@astrojs/image/components';
+import FeaturedProducts from "./landingpage/FeaturedProducts.astro";
+import bannerImage from "../assets/bannerImage.webp"
+
+---
+
+<main class="w-full grid place-items-center relative">
+    <div class="bg-transparent relative">
+        <Hero />
+        <div class="absolute -mt-14 w-full bg-transparent grid place-items-center">
+            <Banner />
+        </div>
+        
+        <Image class={"bg-transparent absolute right-0 -bottom-40"} src={EdgeImage} alt="EdgeImage" />
+
+    </div>
+    <div class="bg-transparent mt-48 w-full">
+        <FeaturedProducts />
+    </div>
+    <div class="bg-transparent my-20">
+        <Image class="bg-transparent" src={bannerImage} alt="banner"/>
+    </div>
+    
+    
+</main>

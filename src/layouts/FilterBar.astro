@@ -1,0 +1,36 @@
+---
+import CheckBox from "../components/CheckBox.astro";
+---
+
+<main class="bg-transparent flex items-start p-3 between w-full">
+    <section class="bg-transparent w-[411px]">
+        <p class="bg-transparent font-bold text-[#3734A9] text-center mb-14 text-[24px]">Filter</p>
+
+        <div class="bg-gray-100 w-[411px] flex flex-col items-center p-4">
+            <div class="bg-transparent">
+                <div class="bg-transparent">
+                    <p class="bg-transparent font-semibold text-lg my-2">Gender</p>
+                    <CheckBox name="Male" />
+                    <CheckBox name="Female" />
+                </div>
+
+                <div class="bg-transparent my-8">
+                    <p class="bg-transparent font-semibold text-lg">Age group</p>
+                    <CheckBox name="Adult" />
+                    <CheckBox name="Children" />
+                </div>
+
+                <div class="bg-transparent my-8">
+                    <p class="bg-transparent font-semibold text-lg ">Size</p>
+                    <CheckBox name="Small" />
+                    <CheckBox name="Medium" />
+                    <CheckBox name="Large" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-transparent">
+        <slot />
+    </section>
+</main>
